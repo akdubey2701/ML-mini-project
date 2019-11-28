@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 from importlib import reload
 import sys
@@ -21,14 +16,14 @@ import pandas as pd
 
 df1 = pd.read_csv('labeledTrainData.tsv', delimiter="\t")
 df1 = df1.drop(['id'], axis=1)
-df1.head()
+print(df1.head())
 
 
 # In[3]:
 
 
 df2 = pd.read_csv('imdb_master.csv',encoding="latin-1")
-df2.head()
+print(df2.head())
 
 
 # In[4]:
@@ -36,7 +31,7 @@ df2.head()
 
 df2 = df2.drop(['Unnamed: 0','type','file'],axis=1)
 df2.columns = ["review","sentiment"]
-df2.head()
+print(df2.head())
 
 
 # In[5]:
@@ -44,14 +39,14 @@ df2.head()
 
 df2 = df2[df2.sentiment != 'unsup']
 df2['sentiment'] = df2['sentiment'].map({'pos': 1, 'neg': 0})
-df2.head()
+print(df2.head())
 
 
 # In[6]:
 
 
 df = pd.concat([df1, df2]).reset_index(drop=True)
-df.head()
+print(df.head())
 
 
 # In[7]:
@@ -83,7 +78,7 @@ df['Processed_Reviews'] = df.review.apply(lambda x: clean_text(x))
 # In[8]:
 
 
-df.head()
+print(df.head())
 
 
 # In[9]:
