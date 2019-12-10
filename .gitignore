@@ -6,3 +6,5 @@ IMDB Dataset.csv
 imdb_master.csv
 imdb_master.csv
 imdb_master.csv
+imdb_master.csv
+*.csv
